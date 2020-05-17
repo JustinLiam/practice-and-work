@@ -62,7 +62,7 @@ class BPNet(object):
         hidden,output = self.forward(X)
         ########## Begin ##########
         # 输出层误差改变量
-        L2_delta = (y.T - output)*self.dsigmoid(output)
+        L2_delta = (y - output)*self.dsigmoid(output)
         # 隐藏层误差改变量
         L1_delta = L2_delta.dot(self.w2.T)*self.dsigmoid(hidden)
         # 输出层对隐藏层的权重改变量
